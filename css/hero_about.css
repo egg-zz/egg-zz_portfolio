@@ -1,0 +1,135 @@
+/* HERO */
+
+#main {
+  align-items: center;
+}
+
+.hero-inner {
+  margin-top: 56px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-center {
+  text-align: center;
+}
+
+.hero-title {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: clamp(2.3rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.hero-name {
+  font-weight: 700;
+}
+
+.hero-role {
+  font-weight: 600;
+  background: linear-gradient(90deg, #b89a72, #c8b498, #9b8872);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-intro {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.8;
+  margin: 20px auto 0;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.keyword {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  color: #4b3b2a;
+  font-size: 0.8rem;
+  margin-inline: 2px;
+  box-shadow: 0 0 12px rgba(215, 199, 184, 0.5);
+}
+
+.hero-keywords {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  opacity: 0;
+}
+
+/* ABOUT */
+
+#about {
+  scroll-margin-top: 88px;
+}
+
+.about-intro-card {
+  margin-bottom: 20px;
+}
+
+.about-card {
+  padding: 18px 18px 16px;
+}
+
+.about-card-title {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.about-card-main {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.about-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.about-list {
+  margin-top: 4px;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.about-team-card {
+  margin-bottom: 0;
+}
+
+.about-team-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.about-team-toggle-indicator {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .hero-inner {
+    margin-top: 72px;
+  }
+
+  .about-two-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

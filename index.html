@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio | Frontend Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS 분리 -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/hero_about.css" />
+    <link rel="stylesheet" href="css/skills.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-badge"></span>
+          <span>건수란</span>
+        </div>
+        <nav class="nav">
+          <a href="#about" class="nav-link" data-scroll>About</a>
+          <a href="#skills" class="nav-link" data-scroll>Skills</a>
+          <a href="#projects" class="nav-link" data-scroll>Project</a>
+          <a href="#contact" class="nav-link" data-scroll>Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- MAIN -->
+      <section id="main">
+        <div class="hero-inner">
+          <div class="hero-center">
+            <p class="section-subtitle">Frontend Developer Portfolio</p>
+            <h1 class="hero-title">
+              <span class="hero-name">건수란</span><br />
+              <span class="hero-role">Frontend Developer</span>
+            </h1>
+
+            <!-- 3초 후 등장 -->
+            <p class="hero-intro">
+              안냥하세요 건수란입니다
+            </p>
+
+            <div class="hero-keywords">
+              <span class="keyword">#UX&nbsp;Focused</span>
+              <span class="keyword">#Usable&nbsp;Security</span>
+              <span class="keyword">#React</span>
+              <span class="keyword">#TypeScript</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="section-inner reveal-on-scroll">
+          <div class="section-subtitle">About</div>
+          <h2 class="section-title">저는 이런 사람입니다</h2>
+
+          <article class="about-card about-intro-card">
+            <div class="about-card-title">Self Introduction</div>
+            <div class="about-card-main">
+              내 접니다
+            </div>
+          </article>
+
+          <div class="about-two-column">
+            <article class="about-card">
+              <div class="about-card-title">Strengths</div>
+              <div class="about-card-main">
+                <ul class="about-list">
+                  <li>저의 강점은요.</li>
+                  <li>이렇구요.</li>
+                  <li>저렇습니다</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="about-card">
+              <div class="about-card-title">How I Work</div>
+              <div class="about-card-main">
+                제가 일하는 방식은요 저도 잘 몰르겠습니다
+            </article>
+          </div>
+
+          <article class="about-card about-team-card">
+            <div class="about-card-title about-team-toggle" id="team-toggle">
+              Team Reviews
+              <span class="about-team-toggle-indicator">More ▾</span>
+            </div>
+            <div class="about-card-main">
+              저에 대해서 궁금하신가여 눌러서 확인해보세여
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="section-inner reveal-on-scroll">
+          <div class="skill-header">
+            <div class="section-subtitle">Skills</div>
+            <h2 class="section-title">기술 스택</h2>
+            <div class="skill-tabs">
+              <button class="skill-tab active" data-category="frontend">F</button>
+              <button class="skill-tab" data-category="backend">B</button>
+              <button class="skill-tab" data-category="certificate">C</button>
+              <button class="skill-tab" data-category="etc">E</button>
+            </div>
+          </div>
+
+          <div class="skill-layout">
+            <!-- Frontend -->
+            <div class="skill-grid" data-category="frontend" data-active="true">
+              <div class="skill-item" data-label="JavaScript" data-level="90">
+                <div class="skill-icon">JS</div>
+                <div class="skill-label">JavaScript</div>
+              </div>
+              <div class="skill-item" data-label="TypeScript" data-level="85">
+                <div class="skill-icon">TS</div>
+                <div class="skill-label">TypeScript</div>
+              </div>
+              <div class="skill-item" data-label="React" data-level="88">
+                <div class="skill-icon">R</div>
+                <div class="skill-label">React</div>
+              </div>
+              <div class="skill-item" data-label="HTML5" data-level="92">
+                <div class="skill-icon">H</div>
+                <div class="skill-label">HTML</div>
+              </div>
+              <div class="skill-item" data-label="CSS3 / SCSS" data-level="88">
+                <div class="skill-icon">C</div>
+                <div class="skill-label">CSS</div>
+              </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="skill-grid" data-category="backend" data-active="false">
+              <div class="skill-item" data-label="Node.js" data-level="70">
+                <div class="skill-icon">N</div>
+                <div class="skill-label">Node.js</div>
+              </div>
+              <div class="skill-item" data-label="Express" data-level="68">
+                <div class="skill-icon">Ex</div>
+                <div class="skill-label">Express</div>
+              </div>
+              <div class="skill-item" data-label="MongoDB" data-level="65">
+                <div class="skill-icon">M</div>
+                <div class="skill-label">MongoDB</div>
+              </div>
+            </div>
+
+            <!-- Certificate -->
+            <div class="skill-grid" data-category="certificate" data-active="false">
+              <div class="skill-item" data-label="정보처리기사 (예시)" data-level="60">
+                <div class="skill-icon">C</div>
+                <div class="skill-label">정보처리기사 딸거에유</div>
+              </div>
+            </div>
+
+            <!-- Etc -->
+            <div class="skill-grid" data-category="etc" data-active="false">
+              <div class="skill-item" data-label="Figma" data-level="70">
+                <div class="skill-icon">Fg</div>
+                <div class="skill-label">Figma</div>
+              </div>
+              <div class="skill-item" data-label="Git / GitHub" data-level="80">
+                <div class="skill-icon">Gt</div>
+                <div class="skill-label">Git / GitHub</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <div class="section-inner reveal-on-scroll">
+          <div class="section-subtitle">Projects</div>
+          <h2 class="section-title">프로젝트</h2>
+
+          <div class="filter-bar">
+            <div class="filter-chips">
+              <button class="filter-chip active" data-filter="all">All</button>
+              <button class="filter-chip" data-filter="team">#Team</button>
+              <button class="filter-chip" data-filter="solo">#Solo</button>
+            </div>
+            <div class="filter-search">
+              <input
+                type="text"
+                id="project-search"
+                placeholder="기술로 검색 (예: react, ts)"
+              />
+            </div>
+          </div>
+          <div class="project-search-message" id="project-search-message"></div>
+
+          <div class="project-grid">
+            <!-- 프로젝트 1 -->
+            <article class="project-card" data-tags="ts react team">
+              <div class="project-thumb">FAKE DETECTOR</div>
+              <div class="project-body">
+                <h3 class="project-title">딥페이크 탐지 웹 챗봇</h3>
+                <p class="project-desc">
+                산학임둥
+                </p>
+                <div class="project-extra">
+                  <div class="project-tags">
+                    <span class="project-tag">#TS</span>
+                    <span class="project-tag">#React</span>
+                    <span class="project-tag">#Team</span>
+                  </div>
+                  <button class="project-link-mini project-open-modal">
+                    More
+                  </button>
+                </div>
+              </div>
+
+              <div class="project-modal-data">
+                <h3>딥페이크 탐지 웹 챗봇</h3>
+                <p>
+                  산학 죽겠어요
+                </p>
+                <p>기술 스택: TypeScript, React, Node.js</p>
+                <p>역할: 프론트엔드 리드, UI/UX 설계</p>
+                <div class="project-modal-links">
+                  <a href="https://github.com/egg-zz/fake-detector" target="_blank">GitHub</a>
+                  <a href="https://www.notion.so" target="_blank">Notion</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 프로젝트 2 -->
+            <article class="project-card" data-tags="ts solo">
+              <div class="project-thumb">PORTFOLIO</div>
+              <div class="project-body">
+                <h3 class="project-title">개인 포트폴리오</h3>
+                <p class="project-desc">
+                  화이탱
+                </p>
+                <div class="project-extra">
+                  <div class="project-tags">
+                    <span class="project-tag">#TS</span>
+                    <span class="project-tag">#Solo</span>
+                  </div>
+                  <button class="project-link-mini project-open-modal">
+                    자세히 보기
+                  </button>
+                </div>
+              </div>
+              <div class="project-modal-data">
+                <h3>개인 포트폴리오</h3>
+                <p>
+                  JS 차력쇼
+                </p>
+                <p>기술 스택: TypeScript, GSAP</p>
+                <p>역할: 개인 프로젝트 (Solo)</p>
+                <div class="project-modal-links">
+                  <a href="https://github.com/yourname/portfolio" target="_blank">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 프로젝트 3 -->
+            <article class="project-card" data-tags="react team">
+              <div class="project-thumb">CODEDANG</div>
+              <div class="project-body">
+                <h3 class="project-title">코딩 학습 플랫폼</h3>
+                <p class="project-desc">
+                  열혈스꾸딩
+                </p>
+                <div class="project-extra">
+                  <div class="project-tags">
+                    <span class="project-tag">#React</span>
+                    <span class="project-tag">#Team</span>
+                  </div>
+                  <button class="project-link-mini project-open-modal">
+                    자세히 보기
+                  </button>
+                </div>
+              </div>
+              <div class="project-modal-data">
+                <h3>코딩 학습 플랫폼</h3>
+                <p>
+                  init
+                </p>
+                <p>기술 스택: React, TypeScript</p>
+                <p>역할: 프론트엔드 개발, UI 구조 설계</p>
+                <div class="project-modal-links">
+                  <a href="https://github.com/yourname/codedang" target="_blank">GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-inner reveal-on-scroll">
+          <div class="section-subtitle">Contact</div>
+          <h2 class="section-title">함께 이야기해요</h2>
+
+          <div class="contact-layout">
+            <aside class="contact-note-card">
+              연락주세용
+              <br /><br />
+              메시지 보내주시면 연락드리겠슴둥
+            </aside>
+
+            <div class="contact-form-card">
+              <form id="contact-form">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label class="form-label" for="name">Name</label>
+                    <input
+                      id="name"
+                      type="text"
+                      class="form-input"
+                      placeholder="이름을 입력하세요"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="email">Email</label>
+                    <input
+                      id="email"
+                      type="email"
+                      class="form-input"
+                      placeholder="이메일 주소"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea
+                    id="message"
+                    class="form-textarea"
+                    placeholder="어떤 이야기를 나누고 싶으신가요?"
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-footer">
+                  <button type="submit" class="contact-btn" id="contact-submit">
+                    <span>Send Email</span>
+                    <span>✉️</span>
+                  </button>
+                  <div>
+                    <div class="contact-success" id="contact-success">
+                      Your email was successfully sent! We'll get back to you soon!
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 공통 모달 (팀 리뷰 / 프로젝트 공용) -->
+    <div id="generic-modal" class="modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close">×</button>
+        <div class="modal-inner" id="modal-inner"></div>
+      </div>
+    </div>
+
+    <!-- 스킬 말풍선 -->
+    <div id="skill-tooltip" class="skill-tooltip"></div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- JS 분리 -->
+    <script src="js/main.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/projects.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>
