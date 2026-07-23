@@ -43,15 +43,42 @@ function CrackedEggOverlay() {
   );
 }
 
-export function EggShape({ type, day, onClick, isActive }: {
+export function EggShape({ type, day, onClick, isActive, editable }: {
   type: EggType;
   day: number;
   onClick: () => void;
   isActive: boolean;
+  editable: boolean;
 }) {
   const cfg = EGG_CONFIG[type];
   const isPlanned = type === "planned";
   const isFailure = type === "failure";
+  const isInteractive = !isPlanned || editable;
+
+  const shapeClassName = `
+    relative flex flex-col items-center justify-center gap-1
+    w-full aspect-[3/4] border-2 select-none overflow-hidden
+    ${cfg.bg} ${cfg.border} ${cfg.text}
+    ${isActive ? "ring-2 ring-primary ring-offset-1" : ""}
+    ${isPlanned ? "opacity-45" : ""}
+    ${isInteractive ? "cursor-pointer" : "cursor-default"}
+    ${isInteractive && isPlanned ? "hover:opacity-90" : ""}
+    ${isInteractive && !isPlanned ? "hover:shadow-lg hover:shadow-black/10" : ""}
+    transition-[opacity,box-shadow] duration-200
+  `;
+
+  const icon = isPlanned
+    ? (editable && <span className="text-base leading-none z-10" aria-hidden="true">+</span>)
+    : (!isFailure && <span className="text-base leading-none z-10" aria-hidden="true">{cfg.icon}</span>);
+
+  if (!isInteractive) {
+    return (
+      <div className={shapeClassName} style={{ borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%" }} aria-hidden="true">
+        <span className="text-[11px] font-bold leading-none z-10">{day}</span>
+        {icon}
+      </div>
+    );
+  }
 
   return (
     <motion.button
@@ -59,26 +86,12 @@ export function EggShape({ type, day, onClick, isActive }: {
       whileHover={{ y: -5, scale: 1.08 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 25 }}
-      className={`
-        relative flex flex-col items-center justify-center gap-1
-        w-full aspect-[3/4] border-2 cursor-pointer select-none overflow-hidden
-        ${cfg.bg} ${cfg.border} ${cfg.text}
-        ${isActive ? "ring-2 ring-primary ring-offset-1" : ""}
-        ${isPlanned ? "opacity-45 hover:opacity-90" : "hover:shadow-lg hover:shadow-black/10"}
-        transition-[opacity,box-shadow] duration-200
-      `}
+      className={shapeClassName}
       style={{ borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%" }}
       aria-label={`Day ${day}: ${isPlanned ? "기록 입력하기" : cfg.label}`}
     >
       <span className="text-[11px] font-bold leading-none z-10">{day}</span>
-
-      {isPlanned && (
-        <span className="text-base leading-none z-10" aria-hidden="true">+</span>
-      )}
-      {!isPlanned && !isFailure && (
-        <span className="text-base leading-none z-10" aria-hidden="true">{cfg.icon}</span>
-      )}
-
+      {icon}
       {isFailure && <CrackedEggOverlay />}
     </motion.button>
   );

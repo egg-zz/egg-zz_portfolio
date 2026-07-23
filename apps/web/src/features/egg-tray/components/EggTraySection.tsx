@@ -5,6 +5,7 @@ import type { EggEntry, EggType } from "../model/types";
 import { EGG_CONFIG } from "../model/egg-config";
 import { MONTHS, CURRENT_MONTH_INDEX } from "../data/months";
 import { getStoredEntriesForMonth, saveStoredEntry } from "../lib/storage";
+import { checkEditTokenFromUrl, isEditModeEnabled } from "../lib/edit-mode";
 import { EggShape } from "./EggShape";
 import { EggModal } from "./EggModal";
 import { EggInputModal } from "./EggInputModal";
@@ -18,10 +19,15 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
   const [selectedEgg, setSelectedEgg] = useState<EggEntry | null>(null);
   const [inputEgg, setInputEgg] = useState<EggEntry | null>(null);
   const [overrides, setOverrides] = useState<Record<number, EggEntry>>({});
+  const [editMode, setEditMode] = useState(false);
 
   const month = MONTHS[monthIdx];
   const canPrev = monthIdx > 0;
   const canNext = monthIdx < MONTHS.length - 1;
+
+  useEffect(() => {
+    setEditMode(checkEditTokenFromUrl() || isEditModeEnabled());
+  }, []);
 
   useEffect(() => {
     setOverrides(getStoredEntriesForMonth(month.key));
@@ -73,7 +79,8 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
             <div>
               <h2 className="text-heading sm:text-heading-lg font-bold mb-3">계란 한 판 = 한 달</h2>
               <p className="text-muted-foreground leading-relaxed max-w-lg">
-                30개의 계란이 이번 달의 개발 기록입니다. 채워진 계란을 클릭하면 그날의 문제와 판단, 해결 과정을 볼 수 있고, 빈 계란(+)을 클릭하면 직접 기록을 남길 수 있습니다.
+                30개의 계란이 이번 달의 개발 기록입니다. 채워진 계란을 클릭하면 그날의 문제와 판단, 해결 과정을 볼 수 있습니다.
+                {editMode && " 빈 계란(+)을 클릭하면 직접 기록을 남길 수 있습니다."}
               </p>
             </div>
 
@@ -146,9 +153,13 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
                 type={egg.type}
                 day={egg.day}
                 isActive={selectedEgg?.day === egg.day || inputEgg?.day === egg.day}
+                editable={editMode}
                 onClick={() => {
-                  if (egg.type === "planned") setInputEgg(egg);
-                  else setSelectedEgg(egg);
+                  if (egg.type === "planned") {
+                    if (editMode) setInputEgg(egg);
+                  } else {
+                    setSelectedEgg(egg);
+                  }
                 }}
               />
             ))}
