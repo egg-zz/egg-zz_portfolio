@@ -65,8 +65,8 @@ export function HeroSection({ sectionRef, onScrollToTray, onScrollToProjects }: 
         </h1>
 
         <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto mb-10">
-          AI를 활용해 빠르게 실험하고, 문제 정의부터 설계·검증·운영까지
-          책임지는 프론트엔드 개발자입니다.
+          아이디어를 빠르게 깨워 보고,
+          <br />끝까지 다듬어 세상 밖으로 꺼내는 개발자 권수린입니다.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
