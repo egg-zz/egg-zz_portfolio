@@ -1,7 +1,9 @@
+const basePath = process.env.GITHUB_ACTIONS ? "/egg-zz_portfolio" : "";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/egg-zz_portfolio",
+  basePath,
   images: {
     unoptimized: true,
   },

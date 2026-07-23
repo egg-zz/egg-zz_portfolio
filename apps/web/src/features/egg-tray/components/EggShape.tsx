@@ -67,9 +67,15 @@ export function EggShape({ type, day, onClick, isActive, editable }: {
     transition-[opacity,box-shadow] duration-200
   `;
 
+  const isImageIcon = cfg.icon.startsWith("/");
+
   const icon = isPlanned
     ? (editable && <span className="text-base leading-none z-10" aria-hidden="true">+</span>)
-    : (!isFailure && <span className="text-base leading-none z-10" aria-hidden="true">{cfg.icon}</span>);
+    : (!isFailure && (
+        isImageIcon
+          ? <img src={cfg.icon} alt="" className="w-3.5 h-3.5 z-10" aria-hidden="true" />
+          : <span className="text-base leading-none z-10" aria-hidden="true">{cfg.icon}</span>
+      ));
 
   if (!isInteractive) {
     return (
