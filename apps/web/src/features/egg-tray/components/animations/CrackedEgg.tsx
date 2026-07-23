@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle, useRef } from "react";
+import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import gsap from "gsap";
 import { prefersReducedMotion } from "../../lib/prefers-reduced-motion";
 import type { EggAnimationHandle } from "./types";
@@ -28,6 +28,12 @@ export const CrackedEgg = forwardRef<EggAnimationHandle>((_props, ref) => {
     setupDashLine(branch3Ref.current);
     readyRef.current = true;
   };
+
+  // Hide the hover-only lines immediately on mount — without this they flash
+  // fully visible until the first hover lazily sets their dash offsets.
+  useEffect(() => {
+    ensureSetup();
+  }, []);
 
   useImperativeHandle(ref, () => ({
     play: () => {

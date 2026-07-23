@@ -4,9 +4,18 @@ import type { EggType } from "../model/types";
 import { EGG_CONFIG } from "../model/egg-config";
 import { CrackedEgg } from "./animations/CrackedEgg";
 import { HatchedEgg } from "./animations/HatchedEgg";
-import type { EggAnimationHandle, HatchAnimationHandle } from "./animations/types";
+import type {
+  EggAnimationHandle,
+  HatchAnimationHandle,
+} from "./animations/types";
 
-export function EggShape({ type, day, onClick, isActive, editable }: {
+export function EggShape({
+  type,
+  day,
+  onClick,
+  isActive,
+  editable,
+}: {
   type: EggType;
   day: number;
   onClick: () => void;
@@ -23,8 +32,8 @@ export function EggShape({ type, day, onClick, isActive, editable }: {
 
   const shapeClassName = `
     relative flex flex-col items-center justify-center gap-1
-    w-full aspect-[3/4] border-2 select-none overflow-hidden
-    ${cfg.bg} ${cfg.border} ${cfg.text}
+    w-full aspect-[3/4] select-none overflow-hidden
+    ${isDeployed ? "border-transparent" : "border-2"} ${isDeployed ? "bg-transparent" : cfg.bg} ${isDeployed ? "" : cfg.border} ${cfg.text}
     ${isActive ? "ring-2 ring-primary ring-offset-1" : ""}
     ${isPlanned ? "opacity-45" : ""}
     ${isInteractive ? "cursor-pointer" : "cursor-default"}
@@ -36,16 +45,32 @@ export function EggShape({ type, day, onClick, isActive, editable }: {
   const isImageIcon = cfg.icon.startsWith("/");
 
   const icon = isPlanned
-    ? (editable && <span className="text-base leading-none z-10" aria-hidden="true">+</span>)
-    : (!isFailure && (
-        isImageIcon
-          ? <img src={cfg.icon} alt="" className="w-5 h-5 z-10" aria-hidden="true" />
-          : <span className="text-base leading-none z-10" aria-hidden="true">{cfg.icon}</span>
+    ? editable && (
+        <span className="text-base leading-none z-10" aria-hidden="true">
+          +
+        </span>
+      )
+    : !isFailure &&
+      (isImageIcon ? (
+        <img
+          src={cfg.icon}
+          alt=""
+          className="w-5 h-5 z-10"
+          aria-hidden="true"
+        />
+      ) : (
+        <span className="text-base leading-none z-10" aria-hidden="true">
+          {cfg.icon}
+        </span>
       ));
 
   if (!isInteractive) {
     return (
-      <div className={shapeClassName} style={{ borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%" }} aria-hidden="true">
+      <div
+        className={shapeClassName}
+        style={{ borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%" }}
+        aria-hidden="true"
+      >
         <span className="text-[11px] font-bold leading-none z-10">{day}</span>
         {icon}
       </div>

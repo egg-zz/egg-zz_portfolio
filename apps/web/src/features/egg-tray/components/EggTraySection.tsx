@@ -141,7 +141,7 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
           ).map(([type, cfg]) => (
             <div key={type} className="flex items-center gap-1.5">
               <div
-                className={`w-5 h-6 border-2 ${cfg.bg} ${cfg.border}`}
+                className={`w-5 h-6 ${type === "deployed" ? "border-0" : "border-2"} ${cfg.bg} ${type === "deployed" ? "" : cfg.border}`}
                 style={{ borderRadius: "50% 50% 50% 50% / 60% 60% 40% 40%" }}
               />
               <span className="text-xs text-muted-foreground">{cfg.label}</span>
