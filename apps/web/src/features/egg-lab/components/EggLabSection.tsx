@@ -22,9 +22,10 @@ export function EggLabSection({ sectionRef }: EggLabSectionProps) {
           className="mb-12"
         >
           <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-3">Egg Lab</p>
-          <h2 className="text-heading sm:text-heading-lg font-bold mb-4">작은 실험들</h2>
+          <h2 className="text-heading sm:text-heading-lg font-bold mb-4">아직 부화 중인 작은 실험들</h2>
           <p className="text-muted-foreground leading-relaxed max-w-lg">
-            빠르게 아이디어를 실험하는 공간입니다. AI를 어디에 사용하고 내가 무엇을 직접 판단했는지 함께 기록합니다.
+            거창하지 않아도 궁금하면 바로 만들어 봅니다.
+            <br />AI를 어디에 사용했고, 무엇을 직접 판단했는지도 함께 기록했어요.
           </p>
         </motion.div>
 

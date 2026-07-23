@@ -42,6 +42,7 @@
   --egg-yolk-light: #F5C842;
   --tray-from: #F0E6C8;
   --tray-to: #E8D9B0;
+  --point: #768F3D;
 }
 
 .dark {
@@ -71,6 +72,7 @@
   --chart-3: #8CC152;
   --chart-4: #E8734A;
   --chart-5: #A08050;
+  --point: #9DBE55;
   --sidebar: #2A1D0E;
   --sidebar-foreground: #FBF5E6;
   --sidebar-primary: #D4A017;
@@ -123,6 +125,7 @@
   --color-egg-yolk-light: var(--egg-yolk-light);
   --color-tray-from: var(--tray-from);
   --color-tray-to: var(--tray-to);
+  --color-point: var(--point);
   --font-sans: 'Pretendard', system-ui, sans-serif;
 
   /* Section heading (h2) — "부화한 서비스들", "계란 한 판 = 한 달" 등 */

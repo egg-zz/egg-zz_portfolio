@@ -22,7 +22,7 @@ export function AboutSection({ sectionRef }: AboutSectionProps) {
           >
             <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">About Me</p>
             <h2 className="text-heading sm:text-heading-lg font-bold mb-6">
-              권수린,<br /><span className="italic text-amber-400">개발자</span>
+              권수린,<br /><span className="italic text-accent">개발자</span>
             </h2>
             <p className="text-background/80 leading-relaxed mb-4 text-sm">
               저는 AI를 활용해 구현 속도를 높이지만, 문제 정의와 설계·검증·수정·최종 결과에 대한 책임은 제가 집니다.
@@ -43,7 +43,7 @@ export function AboutSection({ sectionRef }: AboutSectionProps) {
               </a>
               <a
                 href="mailto:surin@example.com"
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white hover:bg-amber-500 text-sm transition-colors font-semibold"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-white hover:bg-accent text-sm transition-colors font-semibold"
               >
                 <Mail className="w-4 h-4" />
                 이메일 보내기

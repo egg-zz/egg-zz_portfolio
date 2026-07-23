@@ -1,3 +1,5 @@
+export type LabStatus = "concept" | "prototype" | "in-progress" | "completed";
+
 export interface LabItem {
   title: string;
   desc: string;
@@ -5,4 +7,5 @@ export interface LabItem {
   aiUsed: string;
   myJudgement: string;
   tags: string[];
+  status: LabStatus;
 }

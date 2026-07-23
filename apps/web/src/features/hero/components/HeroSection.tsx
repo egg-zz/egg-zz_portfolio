@@ -5,8 +5,8 @@ function FloatingEggs() {
   const eggData = [
     { cx: 60,  cy: 80, rx: 38, ry: 48, fill: "var(--egg-yolk-light)", opacity: 0.9,  delay: 0 },
     { cx: 130, cy: 55, rx: 28, ry: 36, fill: "var(--card)", opacity: 0.95, delay: 0.4 },
-    { cx: 185, cy: 90, rx: 32, ry: 42, fill: "var(--chart-3)", opacity: 0.85, delay: 0.8 },
-    { cx: 240, cy: 60, rx: 24, ry: 30, fill: "var(--chart-4)", opacity: 0.8,  delay: 1.2 },
+    { cx: 185, cy: 90, rx: 32, ry: 42, fill: "var(--secondary)", opacity: 0.85, delay: 0.8 },
+    { cx: 240, cy: 60, rx: 24, ry: 30, fill: "var(--point)", opacity: 0.8,  delay: 1.2 },
     { cx: 290, cy: 88, rx: 35, ry: 44, fill: "var(--primary)", opacity: 0.7,  delay: 0.6 },
   ];
 
@@ -69,25 +69,31 @@ export function HeroSection({ sectionRef, onScrollToTray, onScrollToProjects }: 
           <br />끝까지 다듬어 세상 밖으로 꺼내는 개발자 권수린입니다.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <motion.button
-            onClick={onScrollToTray}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold text-sm hover:bg-accent transition-colors"
-          >
-            <ArrowDown className="w-4 h-4" />
-            이번 달 계란판 보기
-          </motion.button>
-          <motion.button
-            onClick={onScrollToProjects}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-2 px-6 py-3 bg-card border border-border text-foreground rounded-full font-semibold text-sm hover:bg-muted transition-colors"
-          >
-            <ExternalLink className="w-4 h-4" />
-            대표 프로젝트 보기
-          </motion.button>
+        <div className="flex flex-col sm:flex-row items-start justify-center gap-4">
+          <div className="flex flex-col items-center gap-1.5">
+            <motion.button
+              onClick={onScrollToTray}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold text-sm hover:bg-accent transition-colors"
+            >
+              <ArrowDown className="w-4 h-4" />
+              오늘은 뭐가 부화했을까요?
+            </motion.button>
+            <span className="text-[11px] text-muted-foreground">이달의 개발 기록, 계란판으로 보기</span>
+          </div>
+          <div className="flex flex-col items-center gap-1.5">
+            <motion.button
+              onClick={onScrollToProjects}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.97 }}
+              className="flex items-center gap-2 px-6 py-3 bg-card border border-border text-foreground rounded-full font-semibold text-sm hover:bg-muted transition-colors"
+            >
+              <ExternalLink className="w-4 h-4" />
+              부화한 프로젝트 구경하기
+            </motion.button>
+            <span className="text-[11px] text-muted-foreground">대표 프로젝트 살펴보기</span>
+          </div>
         </div>
       </motion.div>
 

@@ -37,7 +37,7 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
 
   const handlePrev = () => {
     if (canPrev) {
-      setMonthIdx(i => i - 1);
+      setMonthIdx((i) => i - 1);
       setSelectedEgg(null);
       setInputEgg(null);
     }
@@ -45,7 +45,7 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
 
   const handleNext = () => {
     if (canNext) {
-      setMonthIdx(i => i + 1);
+      setMonthIdx((i) => i + 1);
       setSelectedEgg(null);
       setInputEgg(null);
     }
@@ -58,11 +58,7 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
   };
 
   return (
-    <section
-      id="tray"
-      ref={sectionRef}
-      className="py-24 px-6"
-    >
+    <section id="tray" ref={sectionRef} className="py-24 px-6">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
@@ -73,14 +69,19 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
           className="mb-10"
         >
           <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-3">
-            {month.sprint} · Sprint
+            Monthly Egg Tray
           </p>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
-              <h2 className="text-heading sm:text-heading-lg font-bold mb-3">계란 한 판 = 한 달</h2>
+              <h2 className="text-heading sm:text-heading-lg font-bold mb-3">
+                이번 달에는 무엇을 품었을까요?
+              </h2>
               <p className="text-muted-foreground leading-relaxed max-w-lg">
-                30개의 계란이 이번 달의 개발 기록입니다. 채워진 계란을 클릭하면 그날의 문제와 판단, 해결 과정을 볼 수 있습니다.
-                {editMode && " 빈 계란(+)을 클릭하면 직접 기록을 남길 수 있습니다."}
+                한 달 동안 품은 고민과 시도를 계란 한 판에 담았어요.
+                <br />
+                궁금한 계란을 톡 눌러 오늘의 기록을 확인해 보세요!
+                {editMode &&
+                  " 빈 계란(+)을 클릭하면 직접 기록을 남길 수 있습니다."}
               </p>
             </div>
 
@@ -91,9 +92,10 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
                 disabled={!canPrev}
                 className={`
                   w-9 h-9 rounded-full border border-border flex items-center justify-center transition-colors
-                  ${canPrev
-                    ? "hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground"
-                    : "text-muted-foreground/30 cursor-not-allowed"
+                  ${
+                    canPrev
+                      ? "hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground"
+                      : "text-muted-foreground/30 cursor-not-allowed"
                   }
                 `}
                 aria-label="이전 달"
@@ -102,8 +104,12 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
               </button>
 
               <div className="text-center min-w-[120px]">
-                <p className="text-sm font-semibold text-foreground">{month.korean}</p>
-                <p className="text-[10px] text-muted-foreground">{month.label}</p>
+                <p className="text-sm font-semibold text-foreground">
+                  {month.korean}
+                </p>
+                <p className="text-[10px] text-muted-foreground">
+                  {month.sprint}
+                </p>
               </div>
 
               <button
@@ -111,9 +117,10 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
                 disabled={!canNext}
                 className={`
                   w-9 h-9 rounded-full border border-border flex items-center justify-center transition-colors
-                  ${canNext
-                    ? "hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground"
-                    : "text-muted-foreground/30 cursor-not-allowed"
+                  ${
+                    canNext
+                      ? "hover:bg-primary hover:text-primary-foreground hover:border-primary text-foreground"
+                      : "text-muted-foreground/30 cursor-not-allowed"
                   }
                 `}
                 aria-label="다음 달"
@@ -126,7 +133,12 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
 
         {/* Legend */}
         <div className="flex flex-wrap gap-3 mb-8">
-          {(Object.entries(EGG_CONFIG) as [EggType, typeof EGG_CONFIG[EggType]][]).map(([type, cfg]) => (
+          {(
+            Object.entries(EGG_CONFIG) as [
+              EggType,
+              (typeof EGG_CONFIG)[EggType],
+            ][]
+          ).map(([type, cfg]) => (
             <div key={type} className="flex items-center gap-1.5">
               <div
                 className={`w-5 h-6 border-2 ${cfg.bg} ${cfg.border}`}
@@ -144,7 +156,10 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.4 }}
           className="rounded-2xl border-2 border-border p-5 sm:p-8"
-          style={{ background: "linear-gradient(135deg, var(--tray-from) 0%, var(--tray-to) 100%)" }}
+          style={{
+            background:
+              "linear-gradient(135deg, var(--tray-from) 0%, var(--tray-to) 100%)",
+          }}
         >
           <div className="grid grid-cols-5 sm:grid-cols-6 gap-3 sm:gap-4">
             {eggs.map((egg) => (
@@ -152,7 +167,9 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
                 key={egg.day}
                 type={egg.type}
                 day={egg.day}
-                isActive={selectedEgg?.day === egg.day || inputEgg?.day === egg.day}
+                isActive={
+                  selectedEgg?.day === egg.day || inputEgg?.day === egg.day
+                }
                 editable={editMode}
                 onClick={() => {
                   if (egg.type === "planned") {
@@ -169,14 +186,42 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
         {/* Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
           {[
-            { label: "기능 구현", count: eggs.filter(e => e.type === "feature").length,  color: "text-amber-600" },
-            { label: "문제 해결", count: eggs.filter(e => e.type === "bugfix").length,   color: "text-orange-500" },
-            { label: "배포",     count: eggs.filter(e => e.type === "deployed").length, color: "text-emerald-600" },
-            { label: "실패·개선", count: eggs.filter(e => e.type === "failure").length,  color: "text-amber-700" },
-          ].map(({ label, count, color }) => (
-            <div key={label} className="bg-card border border-border rounded-xl px-4 py-3 text-center">
-              <p className={`text-2xl font-bold ${color}`}>{count}</p>
-              <p className="text-xs text-muted-foreground mt-0.5">{label}</p>
+            {
+              unit: "개",
+              phrase: "만들었어요",
+              count: eggs.filter((e) => e.type === "feature").length,
+              color: "text-amber-600",
+            },
+            {
+              unit: "번",
+              phrase: "문제를 풀었어요",
+              count: eggs.filter((e) => e.type === "bugfix").length,
+              color: "text-orange-500",
+            },
+            {
+              unit: "번",
+              phrase: "세상 밖으로 나왔어요",
+              count: eggs.filter((e) => e.type === "deployed").length,
+              color: "text-point",
+            },
+            {
+              unit: "번",
+              phrase: "깨지고 다시 만들었어요",
+              count: eggs.filter((e) => e.type === "failure").length,
+              color: "text-amber-700",
+            },
+          ].map(({ unit, phrase, count, color }) => (
+            <div
+              key={phrase}
+              className="bg-card border border-border rounded-xl px-4 py-3 text-center"
+            >
+              <p>
+                <span className={`text-2xl font-bold ${color}`}>{count} </span>
+                <span className="text-sm font-normal text-muted-foreground">
+                  {unit}
+                </span>
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5">{phrase}</p>
             </div>
           ))}
         </div>
@@ -187,7 +232,11 @@ export function EggTraySection({ sectionRef }: EggTraySectionProps) {
       )}
 
       {inputEgg && (
-        <EggInputModal egg={inputEgg} onClose={() => setInputEgg(null)} onSave={handleSaveEntry} />
+        <EggInputModal
+          egg={inputEgg}
+          onClose={() => setInputEgg(null)}
+          onSave={handleSaveEntry}
+        />
       )}
     </section>
   );

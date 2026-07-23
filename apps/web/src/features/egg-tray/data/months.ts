@@ -323,9 +323,9 @@ const augustEggs: EggEntry[] = Array.from({ length: 30 }, (_, i) => ({
 /* ─── Months ─── */
 
 export const MONTHS: MonthData[] = [
-  { key: "june2026",   label: "June 2026",   korean: "2026년 6월", sprint: "Sprint #5",  eggs: juneEggs },
-  { key: "july2026",   label: "July 2026",   korean: "2026년 7월", sprint: "Sprint #6",  eggs: julyEggs },
-  { key: "august2026", label: "August 2026", korean: "2026년 8월", sprint: "Sprint #7",  eggs: augustEggs },
+  { key: "june2026",   label: "June 2026",   korean: "2026년 6월", sprint: "5번째 계란판",  eggs: juneEggs },
+  { key: "july2026",   label: "July 2026",   korean: "2026년 7월", sprint: "6번째 계란판",  eggs: julyEggs },
+  { key: "august2026", label: "August 2026", korean: "2026년 8월", sprint: "7번째 계란판",  eggs: augustEggs },
 ];
 
 export const CURRENT_MONTH_INDEX = 1; // July 2026
