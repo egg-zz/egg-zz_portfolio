@@ -1,0 +1,186 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  --background: #FBF5E6;
+  --foreground: #1C1208;
+  --card: #F3E9CC;
+  --card-foreground: #1C1208;
+  --popover: #F3E9CC;
+  --popover-foreground: #1C1208;
+  --primary: #B8721A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #EDE0C0;
+  --secondary-foreground: #1C1208;
+  --muted: #DDD0A8;
+  --muted-foreground: #7A6040;
+  --accent: #D4A017;
+  --accent-foreground: #1C1208;
+  --destructive: #c0392b;
+  --destructive-foreground: #ffffff;
+  --border: rgba(120, 90, 40, 0.18);
+  --input: transparent;
+  --input-background: #EDE0C0;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #B8721A;
+  --chart-1: #D4A017;
+  --chart-2: #B8721A;
+  --chart-3: #8CC152;
+  --chart-4: #E8734A;
+  --chart-5: #7A6040;
+  --radius: 0.5rem;
+  --sidebar: #F3E9CC;
+  --sidebar-foreground: #1C1208;
+  --sidebar-primary: #B8721A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EDE0C0;
+  --sidebar-accent-foreground: #1C1208;
+  --sidebar-border: rgba(120, 90, 40, 0.18);
+  --sidebar-ring: #B8721A;
+  --egg-yolk-light: #F5C842;
+  --tray-from: #F0E6C8;
+  --tray-to: #E8D9B0;
+}
+
+.dark {
+  --background: #1C1208;
+  --foreground: #FBF5E6;
+  --card: #2A1D0E;
+  --card-foreground: #FBF5E6;
+  --popover: #2A1D0E;
+  --popover-foreground: #FBF5E6;
+  --primary: #D4A017;
+  --primary-foreground: #1C1208;
+  --secondary: #3A2A10;
+  --secondary-foreground: #FBF5E6;
+  --muted: #3A2A10;
+  --muted-foreground: #A08050;
+  --accent: #B8721A;
+  --accent-foreground: #FBF5E6;
+  --destructive: #c0392b;
+  --destructive-foreground: #FBF5E6;
+  --border: rgba(200, 160, 80, 0.15);
+  --input: rgba(200, 160, 80, 0.15);
+  --ring: #D4A017;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: #D4A017;
+  --chart-2: #B8721A;
+  --chart-3: #8CC152;
+  --chart-4: #E8734A;
+  --chart-5: #A08050;
+  --sidebar: #2A1D0E;
+  --sidebar-foreground: #FBF5E6;
+  --sidebar-primary: #D4A017;
+  --sidebar-primary-foreground: #1C1208;
+  --sidebar-accent: #3A2A10;
+  --sidebar-accent-foreground: #FBF5E6;
+  --sidebar-border: rgba(200, 160, 80, 0.15);
+  --sidebar-ring: #D4A017;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-egg-yolk-light: var(--egg-yolk-light);
+  --color-tray-from: var(--tray-from);
+  --color-tray-to: var(--tray-to);
+  --font-sans: 'Pretendard', system-ui, sans-serif;
+
+  /* Section heading (h2) — "부화한 서비스들", "계란 한 판 = 한 달" 등 */
+  --text-heading: 2.25rem;
+  --text-heading--line-height: 1.15;
+  --text-heading--letter-spacing: -0.02em;
+  --text-heading-lg: 3rem;
+  --text-heading-lg--line-height: 1.15;
+  --text-heading-lg--letter-spacing: -0.02em;
+
+  /* Hero display (h1) */
+  --text-display: 3rem;
+  --text-display--line-height: 1.1;
+  --text-display--letter-spacing: -0.02em;
+  --text-display-lg: 3.75rem;
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.02em;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3 {
+    @apply font-sans;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h4, h5, h6 {
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  :hover::-webkit-scrollbar {
+    width: 4px;
+    opacity: 1;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(120, 90, 40, 0.25);
+    border-radius: 2px;
+  }
+}
