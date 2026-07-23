@@ -44,6 +44,7 @@ export function EggModal({ egg, onClose }: { egg: EggEntry; onClose: () => void 
                   <span className="text-xs text-muted-foreground">{egg.date}</span>
                 </div>
                 <h3 className="text-xl font-semibold">{egg.title}</h3>
+                <p className="text-xs text-muted-foreground mt-1">{cfg.flavor}</p>
               </div>
               <button
                 onClick={onClose}

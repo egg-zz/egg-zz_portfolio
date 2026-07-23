@@ -5,8 +5,8 @@ function FloatingEggs() {
   const eggData = [
     { cx: 60,  cy: 80, rx: 38, ry: 48, fill: "var(--egg-yolk-light)", opacity: 0.9,  delay: 0 },
     { cx: 130, cy: 55, rx: 28, ry: 36, fill: "var(--card)", opacity: 0.95, delay: 0.4 },
-    { cx: 185, cy: 90, rx: 32, ry: 42, fill: "var(--secondary)", opacity: 0.85, delay: 0.8 },
-    { cx: 240, cy: 60, rx: 24, ry: 30, fill: "var(--point)", opacity: 0.8,  delay: 1.2 },
+    { cx: 185, cy: 90, rx: 32, ry: 42, fill: "var(--chart-3)", opacity: 0.85, delay: 0.8 },
+    { cx: 240, cy: 60, rx: 24, ry: 30, fill: "var(--chart-4)", opacity: 0.8,  delay: 1.2 },
     { cx: 290, cy: 88, rx: 35, ry: 44, fill: "var(--primary)", opacity: 0.7,  delay: 0.6 },
   ];
 

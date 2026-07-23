@@ -24,7 +24,8 @@ export function ProjectsSection({ sectionRef }: ProjectsSectionProps) {
           <p className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-3">Featured Projects</p>
           <h2 className="text-heading sm:text-heading-lg font-bold mb-4">부화한 서비스들</h2>
           <p className="text-muted-foreground leading-relaxed max-w-lg">
-            아이디어에서 실제 서비스까지, 어떤 문제를 어떤 기준으로 해결했는지 보여줍니다.
+            작은 아이디어가 실제 서비스가 되기까지,
+            <br />제가 어떤 고민을 하고 어떤 선택을 했는지 담았습니다.
           </p>
         </motion.div>
 

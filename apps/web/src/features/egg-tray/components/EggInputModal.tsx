@@ -75,6 +75,7 @@ export function EggInputModal({
             <div className="flex items-start justify-between mb-5">
               <div>
                 <p className="text-xs text-muted-foreground mb-1.5">{egg.date} · 기록 남기기</p>
+                <p className="text-xs text-muted-foreground mb-2.5">{EGG_CONFIG.planned.flavor}</p>
                 <Input
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
