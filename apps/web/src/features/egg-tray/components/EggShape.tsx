@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion } from "motion/react";
 import type { EggType } from "../model/types";
 import { EGG_CONFIG } from "../model/egg-config";
+import { withBasePath } from "../lib/asset-path";
 import { CrackedEgg } from "./animations/CrackedEgg";
 import { HatchedEgg } from "./animations/HatchedEgg";
 import type {
@@ -53,7 +54,7 @@ export function EggShape({
     : !isFailure &&
       (isImageIcon ? (
         <img
-          src={cfg.icon}
+          src={withBasePath(cfg.icon)}
           alt=""
           className="w-5 h-5 z-10"
           aria-hidden="true"

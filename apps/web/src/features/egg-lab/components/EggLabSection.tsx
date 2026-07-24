@@ -1,12 +1,17 @@
+import { useState } from "react";
 import { motion } from "motion/react";
 import { labItems } from "../data/lab-items";
+import type { LabItem } from "../model/types";
 import { LabCard } from "./LabCard";
+import { LabItemModal } from "./LabItemModal";
 
 interface EggLabSectionProps {
   sectionRef: (el: HTMLElement | null) => void;
 }
 
 export function EggLabSection({ sectionRef }: EggLabSectionProps) {
+  const [selected, setSelected] = useState<LabItem | null>(null);
+
   return (
     <section
       id="lab"
@@ -31,10 +36,19 @@ export function EggLabSection({ sectionRef }: EggLabSectionProps) {
 
         <div className="grid sm:grid-cols-2 gap-3">
           {labItems.map((item, i) => (
-            <LabCard key={item.title} item={item} index={i} />
+            <LabCard
+              key={item.title}
+              item={item}
+              index={i}
+              onOpen={() => setSelected(item)}
+            />
           ))}
         </div>
       </div>
+
+      {selected && (
+        <LabItemModal item={selected} onClose={() => setSelected(null)} />
+      )}
     </section>
   );
 }

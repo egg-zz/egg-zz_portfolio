@@ -4,6 +4,9 @@ const basePath = process.env.GITHUB_ACTIONS ? "/egg-zz_portfolio" : "";
 const nextConfig = {
   output: "export",
   basePath,
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   images: {
     unoptimized: true,
   },

@@ -1,6 +1,7 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import gsap from "gsap";
 import { prefersReducedMotion } from "../../lib/prefers-reduced-motion";
+import { withBasePath } from "../../lib/asset-path";
 import type { HatchAnimationHandle } from "./types";
 
 /* Zigzag crack across the shell, drawn just before it reveals the hatched art beneath. */
@@ -97,7 +98,7 @@ export const HatchedEgg = forwardRef<HatchAnimationHandle, { day: number }>(({ d
       </div>
       <img
         ref={imgRef}
-        src="/egg-hatched-no-top-shell.svg?v=2"
+        src={withBasePath("/egg-hatched-no-top-shell.svg?v=2")}
         alt=""
         className="absolute inset-0 w-full h-full object-cover object-[50%_82%] opacity-0"
         aria-hidden="true"
